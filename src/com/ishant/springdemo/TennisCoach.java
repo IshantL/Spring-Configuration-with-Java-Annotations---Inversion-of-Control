@@ -1,12 +1,15 @@
 package com.ishant.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	@Autowired
@@ -34,7 +37,17 @@ public class TennisCoach implements Coach {
 	public String getDailyFortune() {
 		return fortuneService.getFortuneService();
 	}
+	//define my init method
+	@PostConstruct
+	public void doMyStartupStuff(){
+		System.out.println("Inside doMyStartupStuff()");
+	}
 	
+	//define my destroy menthod
+	@PreDestroy
+	public void doMyCleanupStuff(){
+		System.out.println("Inside doMyCleanupStuff()");
+	}
 	/*@Autowired
 	public void doSoneStuff(FortuneService fortuneService) {
 		System.out.println("Inside DdoSomeStuff()");
