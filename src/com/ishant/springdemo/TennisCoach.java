@@ -5,6 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
+	
+	@Autowired
+	private FortuneService fortuneService;
 
 	/*Constructor Injection
 	 @Autowired
@@ -15,7 +18,6 @@ public class TennisCoach implements Coach {
 	public TennisCoach(){
 		System.out.println("Inside Default Constructor");
 	}
-	private FortuneService fortuneService;
 	
 	public String getDailyWorkout() {
 		return "Practice your backhand volley";
@@ -29,9 +31,9 @@ public class TennisCoach implements Coach {
 		return fortuneService.getFortuneService();
 	}
 	
-	@Autowired
+	/*@Autowired
 	public void doSoneStuff(FortuneService fortuneService) {
 		System.out.println("Inside DdoSomeStuff()");
 		this.fortuneService = fortuneService;
-	}
+	}*/
 }
