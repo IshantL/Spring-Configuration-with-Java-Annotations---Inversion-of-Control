@@ -18,3 +18,6 @@ public class AnnotationDemoApp {
 	}
 
 }
+
+/*WARNING: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tennisCoach': Unsatisfied dependency expressed through field 'fortuneService'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.ishant.springdemo.FortuneService' available: expected single matching bean but found 4: databaseFortuneService,happyFortuneService,randomService,restFortuneService
+Exception in thread "main" org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tennisCoach': Unsatisfied dependency expressed through field 'fortuneService'; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.ishant.springdemo.FortuneService' available: expected single matching bean but found 4: databaseFortuneService,happyFortuneService,randomService,restFortuneService*/
